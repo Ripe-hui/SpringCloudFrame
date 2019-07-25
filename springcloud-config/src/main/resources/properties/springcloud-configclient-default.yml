@@ -1,0 +1,8 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: springcloud-configclient
+#   # 在eureka server中看到的status显示为具体的ip地址和portinstance:
+      ##    prefer-ip-address: true  # 使用ip地址注册到eureka server
+      ##    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
