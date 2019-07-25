@@ -11,7 +11,7 @@ public class SpringcloudWebApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringcloudWebApplication.class, args);
         System.out.println("* * * * * * * * * * *");
-        System.out.println("* Web服务启动   *");
+        System.out.println("*     Web服务启动   *");
         System.out.println("* * * * * * * * * * *");
     }
 

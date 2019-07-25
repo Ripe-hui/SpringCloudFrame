@@ -1,0 +1,14 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: springcloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: customer
+          uri: lb://springcloud-web #eureka注册中心存在的服务名称
+          predicates:
+            - Path=/api/customer/** #路径配置
+          filters:
+            - StripPrefix=1     #忽略Path配置的个数，此处为1代表访问/api/customer/**时，会将api忽略，真实的访问地址为lb://customer-center/customer/**,如果为2，则为lb://customer-center/**

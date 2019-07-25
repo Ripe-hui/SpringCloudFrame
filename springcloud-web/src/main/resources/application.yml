@@ -1,9 +1,0 @@
-server:
-  port: 8004
-spring:
-  application:
-    name: springcloud-web
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8001/eureka/ #×¢²áÖÐÐÄµØÖ·
