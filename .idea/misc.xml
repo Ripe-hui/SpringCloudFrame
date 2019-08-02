@@ -10,7 +10,14 @@
         <option value="$PROJECT_DIR$/springcloud-web/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-config/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-configclin/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-oauth/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/springcloud-oauth/authentication-server/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-oauth/authorization-server/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
