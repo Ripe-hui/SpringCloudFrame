@@ -17,6 +17,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SpringCloudFrame" options="-parameters" />
       <module name="springcloud-config" options="-parameters" />
       <module name="springcloud-configclin" options="-parameters" />
       <module name="springcloud-eureka" options="-parameters" />
