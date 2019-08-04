@@ -1,0 +1,18 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: springcloud-eureka
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: false #是否从Eureka Server获取注册信息
+    register-with-eureka: false #是否将自己注册到Eureka Serve
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #服务地址
+#  server:
+#    # 关闭自我保护模式（缺省为打开）
+#    enable-self-preservation: false
+#    # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
+#    eviction-interval-timer-in-ms: 5000
