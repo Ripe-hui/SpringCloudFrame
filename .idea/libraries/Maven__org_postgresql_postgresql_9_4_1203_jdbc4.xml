@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.postgresql:postgresql:9.4-1203-jdbc4">
+    <CLASSES>
+      <root url="jar://D:/Ware/Java/Maven/repository/org/postgresql/postgresql/9.4-1203-jdbc4/postgresql-9.4-1203-jdbc4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/Ware/Java/Maven/repository/org/postgresql/postgresql/9.4-1203-jdbc4/postgresql-9.4-1203-jdbc4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/Ware/Java/Maven/repository/org/postgresql/postgresql/9.4-1203-jdbc4/postgresql-9.4-1203-jdbc4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
