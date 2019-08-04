@@ -2,39 +2,25 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="authentication-client" />
-        <module name="authentication-service" />
-        <module name="authorization-service" />
-        <module name="springcloud-common" />
         <module name="springcloud-config" />
         <module name="springcloud-configclin" />
         <module name="springcloud-eureka" />
         <module name="springcloud-gateway" />
         <module name="springcloud-web" />
+        <module name="SpringCloudFrame" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="authentication-server" target="1.8" />
-      <module name="authorization-server" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="authentication-client" options="-parameters" />
-      <module name="authentication-server" options="-parameters" />
-      <module name="authentication-service" options="-parameters" />
-      <module name="authorization-server" options="-parameters" />
-      <module name="authorization-service" options="-parameters" />
       <module name="springcloud-config" options="-parameters" />
       <module name="springcloud-configclin" options="-parameters" />
       <module name="springcloud-eureka" options="-parameters" />
       <module name="springcloud-gateway" options="-parameters" />
-      <module name="springcloud-oauth" options="-parameters" />
       <module name="springcloud-web" options="-parameters" />
     </option>
   </component>

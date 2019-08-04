@@ -6,11 +6,7 @@
 
     <groupId>com.th</groupId>
     <artifactId>SpringCloudFrame</artifactId>
-    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>springcloud-common</module>
-    </modules>
 
 
 </project>
