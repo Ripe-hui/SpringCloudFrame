@@ -1,0 +1,194 @@
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Encoding\" addBOMForNewFiles=\"with NO BOM\">\r\n    <file url=\"file://$PROJECT_DIR$\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/springcloud-config\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/springcloud-config/src/main/resources/application.yml\" charset=\"GBK\" />\r\n    <file url=\"file://$PROJECT_DIR$/springcloud-configclin\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/springcloud-configclin/src/main/resources/bootstrap.yml\" charset=\"GBK\" />\r\n    <file url=\"file://$PROJECT_DIR$/springcloud-eureka\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/springcloud-gateway\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/springcloud-gateway/src/main/resources/bootstrap.yml\" charset=\"GBK\" />\r\n    <file url=\"file://$PROJECT_DIR$/springcloud-web\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/springcloud-web/src/main/resources/bootstrap.yml\" charset=\"GBK\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+--- a/.idea/encodings.xml	
++++ b/.idea/encodings.xml	
+@@ -1,15 +1,28 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="Encoding" addBOMForNewFiles="with NO BOM">
++  <component name="Encoding">
+     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/springcloud-common" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/springcloud-common/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/springcloud-config" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/springcloud-config/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/springcloud-config/src/main/resources/application.yml" charset="GBK" />
+     <file url="file://$PROJECT_DIR$/springcloud-configclin" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/springcloud-configclin/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/springcloud-configclin/src/main/resources/bootstrap.yml" charset="GBK" />
+     <file url="file://$PROJECT_DIR$/springcloud-eureka" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/springcloud-eureka/src/main/java" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/springcloud-eureka/src/main/resources/application.yml" charset="GBK" />
+     <file url="file://$PROJECT_DIR$/springcloud-gateway" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/springcloud-gateway/src/main/resources/bootstrap.yml" charset="GBK" />
++    <file url="file://$PROJECT_DIR$/springcloud-oauth" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/springcloud-oauth/authentication-client" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/springcloud-oauth/authentication-client/src/main/java" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/springcloud-oauth/authorization-service" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/springcloud-oauth/authorization-service/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/springcloud-web" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/springcloud-web/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/springcloud-web/src/main/resources/bootstrap.yml" charset="GBK" />
++    <file url="PROJECT" charset="GBK" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/Project_Default.xml
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/inspectionProfiles/Project_Default.xml	
+@@ -0,0 +1,36 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="JavaDoc" enabled="true" level="WARNING" enabled_by_default="true">
++      <option name="TOP_LEVEL_CLASS_OPTIONS">
++        <value>
++          <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
++          <option name="REQUIRED_TAGS" value="" />
++        </value>
++      </option>
++      <option name="INNER_CLASS_OPTIONS">
++        <value>
++          <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
++          <option name="REQUIRED_TAGS" value="" />
++        </value>
++      </option>
++      <option name="METHOD_OPTIONS">
++        <value>
++          <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
++          <option name="REQUIRED_TAGS" value="@return@param@throws or @exception" />
++        </value>
++      </option>
++      <option name="FIELD_OPTIONS">
++        <value>
++          <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
++          <option name="REQUIRED_TAGS" value="" />
++        </value>
++      </option>
++      <option name="IGNORE_DEPRECATED" value="false" />
++      <option name="IGNORE_JAVADOC_PERIOD" value="true" />
++      <option name="IGNORE_DUPLICATED_THROWS" value="false" />
++      <option name="IGNORE_POINT_TO_ITSELF" value="false" />
++      <option name="myAdditionalJavadocTags" value="date" />
++    </inspection_tool>
++  </profile>
++</component>
+\ No newline at end of file
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	
++++ b/.idea/.gitignore	
+@@ -0,0 +1,2 @@
++# Default ignored files
++/workspace.xml
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n        <option value=\"$PROJECT_DIR$/springcloud-eureka/pom.xml\" />\r\n        <option value=\"$PROJECT_DIR$/springcloud-gateway/pom.xml\" />\r\n        <option value=\"$PROJECT_DIR$/springcloud-web/pom.xml\" />\r\n        <option value=\"$PROJECT_DIR$/springcloud-config/pom.xml\" />\r\n        <option value=\"$PROJECT_DIR$/springcloud-configclin/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectInspectionProfilesVisibleTreeState\">\r\n    <entry key=\"Project Default\">\r\n      <profile-state>\r\n        <expanded-state>\r\n          <State />\r\n          <State>\r\n            <id>AOP</id>\r\n          </State>\r\n          <State>\r\n            <id>Abstraction issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>ActionScript specificJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>Android</id>\r\n          </State>\r\n          <State>\r\n            <id>Application Servers</id>\r\n          </State>\r\n          <State>\r\n            <id>ArquillianJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Assignment issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Assignment issuesJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>Bitwise operation issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Bitwise operation issuesJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>CDI (Contexts and Dependency Injection)</id>\r\n          </State>\r\n          <State>\r\n            <id>Class metricsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Class structureJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Cloning issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Code maturityJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Code quality toolsJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>Code style issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Code style issuesJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>CodeSpring CoreSpring</id>\r\n          </State>\r\n          <State>\r\n            <id>Compiler issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Concurrency annotation issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Control flow issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Control flow issuesJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>CorrectnessLintAndroid</id>\r\n          </State>\r\n          <State>\r\n            <id>DOM issuesJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>Data flowJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Data flowJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>Declaration redundancyJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Dependency issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>ECMAScript 6 migration aidsJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>EncapsulationJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Error handlingJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Error handlingJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>Faces Model</id>\r\n          </State>\r\n          <State>\r\n            <id>FinalizationJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Flow type checkerJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>GPathGroovy</id>\r\n          </State>\r\n          <State>\r\n            <id>General</id>\r\n          </State>\r\n          <State>\r\n            <id>GeneralJava</id>\r\n          </State>\r\n          <State>\r\n            <id>GeneralJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>Google Web Toolkit</id>\r\n          </State>\r\n          <State>\r\n            <id>Groovy</id>\r\n          </State>\r\n          <State>\r\n            <id>Hibernate</id>\r\n          </State>\r\n          <State>\r\n            <id>ImportsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Inheritance issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>InitializationJava</id>\r\n          </State>\r\n          <State>\r\n            <id>InternationalizationJava</id>\r\n          </State>\r\n          <State>\r\n            <id>J2ME SupportJava</id>\r\n          </State>\r\n          <State>\r\n            <id>J2ME issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>JBoss Seam</id>\r\n          </State>\r\n          <State>\r\n            <id>JPA</id>\r\n          </State>\r\n          <State>\r\n            <id>JSP</id>\r\n          </State>\r\n          <State>\r\n            <id>JUnitJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Java</id>\r\n          </State>\r\n          <State>\r\n            <id>Java 10Java language level migration aidsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Java 11Java language level migration aidsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Java 5Java language level migration aidsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Java 7Java language level migration aidsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Java 8Java language level migration aidsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Java 9Java language level migration aidsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Java EE</id>\r\n          </State>\r\n          <State>\r\n            <id>Java interop issuesKotlin</id>\r\n          </State>\r\n          <State>\r\n            <id>Java language level issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Java language level migration aidsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>JavaBeans issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>JavaFX</id>\r\n          </State>\r\n          <State>\r\n            <id>JavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>JavaScript function metricsJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>JavaScript validity issuesJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>JavadocJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Kotlin</id>\r\n          </State>\r\n          <State>\r\n            <id>Language Injection</id>\r\n          </State>\r\n          <State>\r\n            <id>LintAndroid</id>\r\n          </State>\r\n          <State>\r\n            <id>LoggingJava</id>\r\n          </State>\r\n          <State>\r\n            <id>MemoryJava</id>\r\n          </State>\r\n          <State>\r\n            <id>MessagesCorrectnessLintAndroid</id>\r\n          </State>\r\n          <State>\r\n            <id>Method metricsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Modularization issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Naming conventionsGroovy</id>\r\n          </State>\r\n          <State>\r\n            <id>Naming conventionsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Naming conventionsJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>Node.jsJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>Numeric issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Packaging issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>PerformanceJava</id>\r\n          </State>\r\n          <State>\r\n            <id>PerformanceLintAndroid</id>\r\n          </State>\r\n          <State>\r\n            <id>Plugin DevKit</id>\r\n          </State>\r\n          <State>\r\n            <id>PortabilityJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Potentially confusing code constructsGroovy</id>\r\n          </State>\r\n          <State>\r\n            <id>Potentially confusing code constructsJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>Probable bugsGroovy</id>\r\n          </State>\r\n          <State>\r\n            <id>Probable bugsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Probable bugsJavaScript</id>\r\n          </State>\r\n          <State>\r\n            <id>Probable bugsKotlin</id>\r\n          </State>\r\n          <State>\r\n            <id>Properties Files</id>\r\n          </State>\r\n          <State>\r\n            <id>Properties FilesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>RESTful Web Service</id>\r\n          </State>\r\n          <State>\r\n            <id>Reflective accessJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Resource managementJava</id>\r\n          </State>\r\n          <State>\r\n            <id>SecurityJava</id>\r\n          </State>\r\n          <State>\r\n            <id>SecurityLintAndroid</id>\r\n          </State>\r\n          <State>\r\n            <id>Serialization issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Spring</id>\r\n          </State>\r\n          <State>\r\n            <id>Spring CoreSpring</id>\r\n          </State>\r\n          <State>\r\n            <id>Spring DataSpring</id>\r\n          </State>\r\n          <State>\r\n            <id>Struts</id>\r\n          </State>\r\n          <State>\r\n            <id>Struts 1Struts</id>\r\n          </State>\r\n          <State>\r\n            <id>Style issuesKotlin</id>\r\n          </State>\r\n          <State>\r\n            <id>StyleGroovy</id>\r\n          </State>\r\n          <State>\r\n            <id>TestNGJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Threading issuesGroovy</id>\r\n          </State>\r\n          <State>\r\n            <id>Threading issuesJava</id>\r\n          </State>\r\n          <State>\r\n            <id>TypeScript</id>\r\n          </State>\r\n          <State>\r\n            <id>UsabilityLintAndroid</id>\r\n          </State>\r\n          <State>\r\n            <id>Verbose or redundant code constructsJava</id>\r\n          </State>\r\n          <State>\r\n            <id>VisibilityJava</id>\r\n          </State>\r\n          <State>\r\n            <id>Web Services</id>\r\n          </State>\r\n          <State>\r\n            <id>WebSocket</id>\r\n          </State>\r\n          <State>\r\n            <id>toString() issuesJava</id>\r\n          </State>\r\n        </expanded-state>\r\n      </profile-state>\r\n    </entry>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -10,6 +10,7 @@
+         <option value="$PROJECT_DIR$/springcloud-web/pom.xml" />
+         <option value="$PROJECT_DIR$/springcloud-config/pom.xml" />
+         <option value="$PROJECT_DIR$/springcloud-configclin/pom.xml" />
++        <option value="$PROJECT_DIR$/springcloud-oauth/pom.xml" />
+       </list>
+     </option>
+   </component>
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <annotationProcessing>\r\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\r\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\r\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\r\n        <outputRelativeToContentRoot value=\"true\" />\r\n        <module name=\"springcloud-config\" />\r\n        <module name=\"springcloud-configclin\" />\r\n        <module name=\"springcloud-eureka\" />\r\n        <module name=\"springcloud-gateway\" />\r\n        <module name=\"springcloud-web\" />\r\n        <module name=\"SpringCloudFrame\" />\r\n      </profile>\r\n    </annotationProcessing>\r\n  </component>\r\n  <component name=\"JavacSettings\">\r\n    <option name=\"ADDITIONAL_OPTIONS_OVERRIDE\">\r\n      <module name=\"SpringCloudFrame\" options=\"-parameters\" />\r\n      <module name=\"springcloud-config\" options=\"-parameters\" />\r\n      <module name=\"springcloud-configclin\" options=\"-parameters\" />\r\n      <module name=\"springcloud-eureka\" options=\"-parameters\" />\r\n      <module name=\"springcloud-gateway\" options=\"-parameters\" />\r\n      <module name=\"springcloud-web\" options=\"-parameters\" />\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	
++++ b/.idea/compiler.xml	
+@@ -7,21 +7,27 @@
+         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+         <outputRelativeToContentRoot value="true" />
+         <module name="springcloud-config" />
+-        <module name="springcloud-configclin" />
+-        <module name="springcloud-eureka" />
+-        <module name="springcloud-gateway" />
+         <module name="springcloud-web" />
+-        <module name="SpringCloudFrame" />
++        <module name="springcloud-gateway" />
++        <module name="authorization-service" />
++        <module name="springcloud-common" />
++        <module name="springcloud-eureka" />
++        <module name="authentication-client" />
++        <module name="springcloud-configclin" />
+       </profile>
+     </annotationProcessing>
+   </component>
+   <component name="JavacSettings">
+     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+       <module name="SpringCloudFrame" options="-parameters" />
++      <module name="authentication-client" options="-parameters" />
++      <module name="authorization-service" options="-parameters" />
++      <module name="springcloud-common" options="-parameters" />
+       <module name="springcloud-config" options="-parameters" />
+       <module name="springcloud-configclin" options="-parameters" />
+       <module name="springcloud-eureka" options="-parameters" />
+-      <module name="springcloud-gateway" options="-parameters" />
++      <module name="springcloud-gateway" options="" />
++      <module name="springcloud-oauth" options="-parameters" />
+       <module name="springcloud-web" options="-parameters" />
+     </option>
+   </component>
+Index: .idea/junitgenerator-prj-settings.xml
+===================================================================
+diff --git a/.idea/junitgenerator-prj-settings.xml b/.idea/junitgenerator-prj-settings.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/junitgenerator-prj-settings.xml	
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="JUnitGeneratorProjectSettings">
++    <option name="selectedTemplateKey" value="JUnit 4" />
++    <option name="vmTemplates">
++      <map>
++        <entry key="JUnit 3" value="######################################################################################## &#10;## &#10;## Available variables: &#10;##         $entryList.methodList - List of method composites &#10;##         $entryList.privateMethodList - List of private method composites &#10;##         $entryList.fieldList - ArrayList of class scope field names &#10;##         $entryList.className - class name &#10;##         $entryList.packageName - package name &#10;##         $today - Todays date in MM/dd/yyyy format &#10;## &#10;##            MethodComposite variables: &#10;##                $method.name - Method Name &#10;##                $method.signature - Full method signature in String form &#10;##                $method.reflectionCode - list of strings representing commented out reflection code to access method (Private Methods) &#10;##                $method.paramNames - List of Strings representing the method's parameters' names &#10;##                $method.paramClasses - List of Strings representing the method's parameters' classes &#10;## &#10;## You can configure the output class name using &quot;testClass&quot; variable below. &#10;## Here are some examples: &#10;## Test${entry.ClassName} - will produce TestSomeClass &#10;## ${entry.className}Test - will produce SomeClassTest &#10;## &#10;######################################################################################## &#10;## &#10;#macro (cap $strIn)$strIn.valueOf($strIn.charAt(0)).toUpperCase()$strIn.substring(1)#end &#10;## Iterate through the list and generate testcase for every entry. &#10;#foreach ($entry in $entryList) &#10;#set( $testClass=&quot;${entry.className}Test&quot;) &#10;## &#10;package test.$entry.packageName; &#10;&#10;import junit.framework.Test; &#10;import junit.framework.TestSuite; &#10;import junit.framework.TestCase; &#10;&#10;/** &#10;* ${entry.className} Tester. &#10;* &#10;* @author &lt;Authors name&gt; &#10;* @since &lt;pre&gt;$today&lt;/pre&gt; &#10;* @version 1.0 &#10;*/ &#10;public class $testClass extends TestCase { &#10;public $testClass(String name) { &#10;super(name); &#10;} &#10;&#10;public void setUp() throws Exception { &#10;super.setUp(); &#10;} &#10;&#10;public void tearDown() throws Exception { &#10;super.tearDown(); &#10;} &#10;&#10;#foreach($method in $entry.methodList) &#10;/** &#10;* &#10;* Method: $method.signature &#10;* &#10;*/ &#10;public void test#cap(${method.name})() throws Exception { &#10;//TODO: Test goes here... &#10;} &#10;&#10;#end &#10;&#10;#foreach($method in $entry.privateMethodList) &#10;/** &#10;* &#10;* Method: $method.signature &#10;* &#10;*/ &#10;public void test#cap(${method.name})() throws Exception { &#10;//TODO: Test goes here... &#10;#foreach($string in $method.reflectionCode) &#10;$string &#10;#end &#10;} &#10;&#10;#end &#10;&#10;public static Test suite() { &#10;return new TestSuite(${testClass}.class); &#10;} &#10;} &#10;#end" />
++        <entry key="JUnit 4" value="######################################################################################## &#10;## &#10;## Available variables: &#10;##         $entryList.methodList - List of method composites &#10;##         $entryList.privateMethodList - List of private method composites &#10;##         $entryList.fieldList - ArrayList of class scope field names &#10;##         $entryList.className - class name &#10;##         $entryList.packageName - package name &#10;##         $today - Todays date in MM/dd/yyyy format &#10;## &#10;##            MethodComposite variables: &#10;##                $method.name - Method Name &#10;##                $method.signature - Full method signature in String form &#10;##                $method.reflectionCode - list of strings representing commented out reflection code to access method (Private Methods) &#10;##                $method.paramNames - List of Strings representing the method's parameters' names &#10;##                $method.paramClasses - List of Strings representing the method's parameters' classes &#10;## &#10;## You can configure the output class name using &quot;testClass&quot; variable below. &#10;## Here are some examples: &#10;## Test${entry.ClassName} - will produce TestSomeClass &#10;## ${entry.className}Test - will produce SomeClassTest &#10;## &#10;######################################################################################## &#10;## &#10;#macro (cap $strIn)$strIn.valueOf($strIn.charAt(0)).toUpperCase()$strIn.substring(1)#end &#10;## Iterate through the list and generate testcase for every entry. &#10;#foreach ($entry in $entryList) &#10;#set( $testClass=&quot;${entry.className}Test&quot;) &#10;## &#10;package $entry.packageName; &#10;&#10;import org.junit.Test; &#10;import org.junit.Before; &#10;import org.junit.After; &#10;&#10;/** &#10;* ${entry.className} Tester. &#10;* &#10;* @author &lt;Authors name&gt; &#10;* @since &lt;pre&gt;$date&lt;/pre&gt; &#10;* @version 1.0 &#10;*/ &#10;public class $testClass { &#10;&#10;@Before&#10;public void before() throws Exception { &#10;} &#10;&#10;@After&#10;public void after() throws Exception { &#10;} &#10;&#10;#foreach($method in $entry.methodList) &#10;/** &#10;* &#10;* Method: $method.signature &#10;* &#10;*/ &#10;@Test&#10;public void test#cap(${method.name})() throws Exception { &#10;//TODO: Test goes here... &#10;} &#10;&#10;#end &#10;&#10;#foreach($method in $entry.privateMethodList) &#10;/** &#10;* &#10;* Method: $method.signature &#10;* &#10;*/ &#10;@Test&#10;public void test#cap(${method.name})() throws Exception { &#10;//TODO: Test goes here... &#10;#foreach($string in $method.reflectionCode) &#10;$string &#10;#end &#10;} &#10;&#10;#end &#10;} &#10;#end" />
++      </map>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	
++++ b/.idea/vcs.xml	
+@@ -2,5 +2,6 @@
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+     <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/springcloud-eureka" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file

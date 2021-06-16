@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.th.authorization.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.th.authorization.model.User">
+        <id column="t_id"  property="id" />
+        <result column="t_code"  property="code" />
+        <result column="t_name"  property="username" />
+        <result column="t_password"  property="password" />
+        <result column="t_phone"  property="mobile" />
+        <result column="t_create_by"  property="createdBy" />
+        <result column="t_create_time"  property="createdTime" />
+        <result column="t_update_time"  property="updatedTime" />
+        <result column="t_update_by"  property="updatedBy" />
+    </resultMap>
+    <sql id="Base_Column_List">
+     t_id,t_code,t_name,t_password,t_phone,t_create_by,t_create_time,t_update_time,t_update_by
+    </sql>
+    <select id="getByUserCode" parameterType="java.lang.String" resultMap="BaseResultMap">
+      select
+      <include refid="Base_Column_List" />
+      from t_bd_user
+      where t_code=#{userCode}
+    </select>
+</mapper>

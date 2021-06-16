@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springcloud-config" />
-        <module name="springcloud-configclin" />
-        <module name="springcloud-eureka" />
-        <module name="springcloud-gateway" />
         <module name="springcloud-web" />
+        <module name="springcloud-configclin" />
+        <module name="springcloud-config" />
+        <module name="springcloud-gateway" />
+        <module name="springcloud-eureka" />
         <module name="SpringCloudFrame" />
       </profile>
     </annotationProcessing>

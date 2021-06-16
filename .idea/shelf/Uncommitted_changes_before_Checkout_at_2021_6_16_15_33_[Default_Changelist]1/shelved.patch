@@ -1,0 +1,492 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>com.th</groupId>\r\n    <artifactId>SpringCloudFrame</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n\r\n    <parent>\r\n        <groupId>org.springframework.boot</groupId>\r\n        <artifactId>spring-boot-starter-parent</artifactId>\r\n        <version>2.1.6.RELEASE</version>\r\n        <relativePath/> <!-- lookup parent from repository -->\r\n    </parent>\r\n\r\n    <properties>\r\n        <java.version>1.8</java.version>\r\n        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <!--web-->\r\n       <!-- <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-web</artifactId>\r\n        </dependency>-->\r\n\r\n        <!--test测试-->\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-test</artifactId>\r\n            <scope>test</scope>\r\n        </dependency>\r\n\r\n        <!--服务客户端-->\r\n        <dependency>\r\n            <groupId>org.springframework.cloud</groupId>\r\n            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>\r\n        </dependency>\r\n\r\n        <!--配置中信-->\r\n        <dependency>\r\n            <groupId>org.springframework.cloud</groupId>\r\n            <artifactId>spring-cloud-starter-config</artifactId>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n    <dependencyManagement>\r\n        <dependencies>\r\n            <dependency>\r\n                <groupId>org.springframework.cloud</groupId>\r\n                <artifactId>spring-cloud-dependencies</artifactId>\r\n                <version>${spring-cloud.version}</version>\r\n                <type>pom</type>\r\n                <scope>import</scope>\r\n            </dependency>\r\n        </dependencies>\r\n    </dependencyManagement>\r\n\r\n\r\n\r\n</project>
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	
++++ b/pom.xml	
+@@ -6,8 +6,13 @@
+ 
+     <groupId>com.th</groupId>
+     <artifactId>SpringCloudFrame</artifactId>
++    <packaging>pom</packaging>
+     <version>1.0-SNAPSHOT</version>
+ 
++    <modules>
++        <module>springcloud-common</module>
++    </modules>
++
+     <parent>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-parent</artifactId>
+@@ -40,11 +45,61 @@
+             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+         </dependency>
+ 
+-        <!--配置中信-->
++        <!--配置中心-->
+         <dependency>
+             <groupId>org.springframework.cloud</groupId>
+             <artifactId>spring-cloud-starter-config</artifactId>
+         </dependency>
++
++        <!--mybatis依赖包-->
++        <dependency>
++            <groupId>org.mybatis.spring.boot</groupId>
++            <artifactId>mybatis-spring-boot-starter</artifactId>
++            <version>2.1.0</version>
++        </dependency>
++        <dependency>
++            <groupId>com.alibaba</groupId>
++            <artifactId>druid-spring-boot-starter</artifactId>
++            <version>1.1.9</version>
++        </dependency>
++        <dependency>
++            <groupId>org.springframework</groupId>
++            <artifactId>spring-jdbc</artifactId>
++        </dependency>
++        <!--数据库-->
++        <dependency>
++            <groupId>mysql</groupId>
++            <artifactId>mysql-connector-java</artifactId>
++            <scope>runtime</scope>
++        </dependency>
++        <dependency>
++            <groupId>org.postgresql</groupId>
++            <artifactId>postgresql</artifactId>
++            <version>9.4-1203-jdbc4</version>
++        </dependency>
++        <!--Redis缓存-->
++        <dependency>
++            <groupId>org.springframework.boot</groupId>
++            <artifactId>spring-boot-starter-data-redis</artifactId>
++        </dependency>
++        <dependency>
++            <groupId>javax</groupId>
++            <artifactId>javaee-api</artifactId>
++            <version>7.0</version>
++        </dependency>
++        <dependency>
++            <groupId>org.springframework.boot</groupId>
++            <artifactId>spring-boot-starter-tomcat</artifactId>
++            <version>2.1.7.RELEASE</version>
++        </dependency>
++
++        <dependency>
++            <groupId>org.projectlombok</groupId>
++            <artifactId>lombok</artifactId>
++            <version>1.18.8</version>
++            <optional>true</optional>
++        </dependency>
++
+     </dependencies>
+ 
+     <dependencyManagement>
+Index: springcloud-gateway/src/main/java/com/th/springcloudgateway/SpringcloudGatewayApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.th.springcloudgateway;\r\n\r\nimport org.springframework.boot.SpringApplication;\r\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\r\nimport org.springframework.cloud.client.discovery.EnableDiscoveryClient;\r\n\r\n@EnableDiscoveryClient\r\n@SpringBootApplication\r\npublic class SpringcloudGatewayApplication {\r\n\r\n    public static void main(String[] args) {\r\n        SpringApplication.run(SpringcloudGatewayApplication.class, args);\r\n        System.out.println(\"* * * * * * * * * * *\");\r\n        System.out.println(\"* Gateway服务启动   *\");\r\n        System.out.println(\"* * * * * * * * * * *\");\r\n    }\r\n\r\n}\r\n
+===================================================================
+diff --git a/springcloud-gateway/src/main/java/com/th/springcloudgateway/SpringcloudGatewayApplication.java b/springcloud-gateway/src/main/java/com/th/springcloudgateway/SpringcloudGatewayApplication.java
+--- a/springcloud-gateway/src/main/java/com/th/springcloudgateway/SpringcloudGatewayApplication.java	
++++ b/springcloud-gateway/src/main/java/com/th/springcloudgateway/SpringcloudGatewayApplication.java	
+@@ -2,10 +2,13 @@
+ 
+ import org.springframework.boot.SpringApplication;
+ import org.springframework.boot.autoconfigure.SpringBootApplication;
++import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
++import org.springframework.cloud.openfeign.EnableFeignClients;
+ 
+ @EnableDiscoveryClient
+ @SpringBootApplication
++@EnableFeignClients(basePackages = "com.th.client")
+ public class SpringcloudGatewayApplication {
+ 
+     public static void main(String[] args) {
+Index: springcloud-gateway/src/main/java/com/th/springcloudgateway/filter/AuthorizeFilter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.th.springcloudgateway.filter;\r\n\r\nimport org.apache.commons.logging.Log;\r\nimport org.apache.commons.logging.LogFactory;\r\nimport org.springframework.cloud.gateway.filter.GatewayFilterChain;\r\nimport org.springframework.cloud.gateway.filter.GlobalFilter;\r\nimport org.springframework.core.Ordered;\r\nimport org.springframework.http.HttpHeaders;\r\nimport org.springframework.http.HttpStatus;\r\nimport org.springframework.http.server.reactive.ServerHttpRequest;\r\nimport org.springframework.http.server.reactive.ServerHttpResponse;\r\nimport org.springframework.stereotype.Component;\r\nimport org.springframework.util.StringUtils;\r\nimport org.springframework.web.server.ServerWebExchange;\r\nimport reactor.core.publisher.Mono;\r\n\r\n/**\r\n * @Component 全局GlobalFilter过滤器\r\n *\r\n */\r\n@Component\r\npublic class AuthorizeFilter implements GlobalFilter, Ordered {\r\n    private static final Log logger = LogFactory.getLog(AuthorizeFilter.class);\r\n    private static final String AUTHORIZE_TOKEN=\"token\";\r\n\r\n    @Override\r\n    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {\r\n        logger.info(\"使用filter\");\r\n        ServerHttpRequest request = exchange.getRequest();\r\n        HttpHeaders headers = request.getHeaders();\r\n        String token = headers.getFirst(AUTHORIZE_TOKEN);\r\n        if (null == token){\r\n            token=request.getQueryParams().getFirst(AUTHORIZE_TOKEN);\r\n        }\r\n        ServerHttpResponse response = exchange.getResponse();\r\n        if (StringUtils.isEmpty(token)){\r\n            response.setStatusCode(HttpStatus.UNAUTHORIZED);\r\n            return  response.setComplete();\r\n        }\r\n        return chain.filter(exchange);\r\n    }\r\n\r\n    @Override\r\n    public int getOrder() {\r\n        return 0;\r\n    }\r\n/**\r\n * 继承AbstractGatewayFilterFactory实现指定使用过滤器\r\n * filters:\r\n *            - StripPrefix=1\r\n *            - Authorize=true #启用过滤器 Authorize为过滤类的前缀\r\n */\r\n    /*@Component\r\n    public class AuthorizeGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthorizeGatewayFilterFactory.Config> {\r\n        private static final Log logger = LogFactory.getLog(AbstractGatewayFilterFactory.class);\r\n        public AuthorizeGatewayFilterFactory(){\r\n            super(Config.class);\r\n        }\r\n        @Override\r\n        public GatewayFilter apply(Config config) {\r\n            return (exchange, chain) -> {\r\n                ServerHttpRequest request =exchange.getRequest();\r\n                String token = request.getHeaders().getFirst(\"token\");\r\n                logger.info(\"token:\"+token);\r\n                if (null == token){\r\n                    token = request.getQueryParams().getFirst(\"token\");\r\n                }\r\n                ServerHttpResponse response = exchange.getResponse();\r\n                if (StringUtils.isEmpty(token)){\r\n                    response.setStatusCode(HttpStatus.UNAUTHORIZED);\r\n                    return response.setComplete();\r\n                }\r\n                return chain.filter(exchange);\r\n            };\r\n        }\r\n        public static class Config{\r\n            static String s=\"123456\";\r\n        }\r\n    }*/\r\n\r\n}\r\n
+===================================================================
+diff --git a/springcloud-gateway/src/main/java/com/th/springcloudgateway/filter/AuthorizeFilter.java b/springcloud-gateway/src/main/java/com/th/springcloudgateway/filter/AuthorizeFilter.java
+--- a/springcloud-gateway/src/main/java/com/th/springcloudgateway/filter/AuthorizeFilter.java	
++++ b/springcloud-gateway/src/main/java/com/th/springcloudgateway/filter/AuthorizeFilter.java	
+@@ -1,23 +1,93 @@
+ package com.th.springcloudgateway.filter;
+ 
++import com.th.client.service.IAuthService;
++import lombok.extern.slf4j.Slf4j;
+ import org.apache.commons.logging.Log;
+ import org.apache.commons.logging.LogFactory;
++import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.cloud.gateway.filter.GatewayFilterChain;
+ import org.springframework.cloud.gateway.filter.GlobalFilter;
++import org.springframework.context.annotation.ComponentScan;
++import org.springframework.context.annotation.Configuration;
+ import org.springframework.core.Ordered;
++import org.springframework.core.io.buffer.DataBuffer;
+ import org.springframework.http.HttpHeaders;
+ import org.springframework.http.HttpStatus;
+ import org.springframework.http.server.reactive.ServerHttpRequest;
+ import org.springframework.http.server.reactive.ServerHttpResponse;
+ import org.springframework.stereotype.Component;
+-import org.springframework.util.StringUtils;
++import org.apache.commons.lang.StringUtils;
+ import org.springframework.web.server.ServerWebExchange;
++import reactor.core.publisher.Flux;
+ import reactor.core.publisher.Mono;
+ 
+ /**
+  * @Component 全局GlobalFilter过滤器
+- *
+- */
++ *请求url权限校验
++ */
++
++@Configuration
++@ComponentScan(basePackages = "com.th.client")
++@Slf4j
++public class AuthorizeFilter implements GlobalFilter{
++    private final static String X_CLIENT_TOKEN_USER = "x-client-token-user";
++    private final static String X_CLIENT_TOKEN = "x-client-token";
++    private static final String BEARER = "Bearer";
++
++    /**
++     * 由authentication-client模块提供签权的feign客户端
++     */
++    @Autowired
++    private IAuthService authService;
++
++    /**
++     * 1.首先网关检查token是否有效，无效直接返回401，不调用签权服务
++     * 2.调用签权服务器看是否对该请求有权限，有权限进入下一个filter，没有权限返回401
++     *
++     * @param exchange
++     * @param chain
++     * @return
++     */
++    @Override
++    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
++        ServerHttpRequest request = exchange.getRequest();
++        String authentication = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
++        String method = request.getMethodValue();
++        String url = request.getPath().value();
++        log.debug("url:{},method:{},headers:{}", url, method, request.getHeaders());
++        //不需要网关签权的url
++        if (authService.ignoreAuthentication(url)) {
++            return chain.filter(exchange);
++        }
++        if (StringUtils.isBlank(authentication) || !authentication.startsWith(BEARER)) {
++            log.debug("url:{},method:{},headers:{}, 请求未携带token信息", url, method, request.getHeaders());
++            return unauthorized(exchange);
++        }
++        //调用签权服务看用户是否有权限，若有权限进入下一个filter
++        if (authService.hasPermission(authentication, url, method)) {
++            ServerHttpRequest.Builder builder = request.mutate();
++            //TODO 转发的请求都加上服务间认证token
++            builder.header(X_CLIENT_TOKEN, "TODO zhoutaoo添加服务间简单认证");
++            //将jwt token中的用户信息传给服务
++            builder.header(X_CLIENT_TOKEN_USER, authService.getJwt(authentication).getClaims());
++            return chain.filter(exchange.mutate().request(builder.build()).build());
++        }
++        return unauthorized(exchange);
++    }
++
++    /**
++     * 网关拒绝，返回401
++     *
++     * @param
++     */
++    private Mono<Void> unauthorized(ServerWebExchange serverWebExchange) {
++        serverWebExchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
++        DataBuffer buffer = serverWebExchange.getResponse()
++                .bufferFactory().wrap(HttpStatus.UNAUTHORIZED.getReasonPhrase().getBytes());
++        return serverWebExchange.getResponse().writeWith(Flux.just(buffer));
++    }
++}
++/*
+ @Component
+ public class AuthorizeFilter implements GlobalFilter, Ordered {
+     private static final Log logger = LogFactory.getLog(AuthorizeFilter.class);
+@@ -76,6 +146,6 @@
+         public static class Config{
+             static String s="123456";
+         }
+-    }*/
++    }*//*
+ 
+-}
++}*/
+Index: SpringCloudFrame.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/SpringCloudFrame.iml b/SpringCloudFrame.iml
+deleted file mode 100644
+--- a/SpringCloudFrame.iml	
++++ /dev/null	
+@@ -1,2 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4" />
+\ No newline at end of file
+Index: springcloud-gateway/src/test/java/com/th/springcloudgateway/SpringcloudGatewayApplicationTests.java
+===================================================================
+diff --git a/springcloud-gateway/src/test/java/com/th/springcloudgateway/SpringcloudGatewayApplicationTests.java b/springcloud-gateway/src/test/java/com/th/springcloudgateway/SpringcloudGatewayApplicationTests.java
+deleted file mode 100644
+--- a/springcloud-gateway/src/test/java/com/th/springcloudgateway/SpringcloudGatewayApplicationTests.java	
++++ /dev/null	
+@@ -1,16 +0,0 @@
+-package com.th.springcloudgateway;
+-
+-import org.junit.Test;
+-import org.junit.runner.RunWith;
+-import org.springframework.boot.test.context.SpringBootTest;
+-import org.springframework.test.context.junit4.SpringRunner;
+-
+-@RunWith(SpringRunner.class)
+-@SpringBootTest
+-public class SpringcloudGatewayApplicationTests {
+-
+-    @Test
+-    public void contextLoads() {
+-    }
+-
+-}
+Index: springcloud-gateway/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n    <parent>\r\n        <groupId>com.th</groupId>\r\n        <artifactId>SpringCloudFrame</artifactId>\r\n        <version>1.0-SNAPSHOT</version>\r\n        <relativePath/> <!-- lookup parent from repository -->\r\n    </parent>\r\n    <groupId>com.th</groupId>\r\n    <artifactId>springcloud-gateway</artifactId>\r\n    <version>0.0.1-SNAPSHOT</version>\r\n    <name>springcloud-gateway</name>\r\n    <description>Demo project for Spring Boot</description>\r\n\r\n    <properties>\r\n        <java.version>1.8</java.version>\r\n        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>\r\n    </properties>\r\n\r\n    <dependencies>\r\n\r\n        <dependency>\r\n            <groupId>org.springframework.cloud</groupId>\r\n            <artifactId>spring-cloud-starter-gateway</artifactId>\r\n        </dependency>\r\n\r\n    </dependencies>\r\n\r\n    <dependencyManagement>\r\n        <dependencies>\r\n            <dependency>\r\n                <groupId>org.springframework.cloud</groupId>\r\n                <artifactId>spring-cloud-dependencies</artifactId>\r\n                <version>${spring-cloud.version}</version>\r\n                <type>pom</type>\r\n                <scope>import</scope>\r\n            </dependency>\r\n        </dependencies>\r\n    </dependencyManagement>\r\n\r\n    <build>\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.springframework.boot</groupId>\r\n                <artifactId>spring-boot-maven-plugin</artifactId>\r\n            </plugin>\r\n        </plugins>\r\n    </build>\r\n\r\n</project>\r\n
+===================================================================
+diff --git a/springcloud-gateway/pom.xml b/springcloud-gateway/pom.xml
+--- a/springcloud-gateway/pom.xml	
++++ b/springcloud-gateway/pom.xml	
+@@ -2,12 +2,6 @@
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+     <modelVersion>4.0.0</modelVersion>
+-    <parent>
+-        <groupId>com.th</groupId>
+-        <artifactId>SpringCloudFrame</artifactId>
+-        <version>1.0-SNAPSHOT</version>
+-        <relativePath/> <!-- lookup parent from repository -->
+-    </parent>
+     <groupId>com.th</groupId>
+     <artifactId>springcloud-gateway</artifactId>
+     <version>0.0.1-SNAPSHOT</version>
+@@ -24,27 +18,53 @@
+         <dependency>
+             <groupId>org.springframework.cloud</groupId>
+             <artifactId>spring-cloud-starter-gateway</artifactId>
++            <version>2.1.2.RELEASE</version>
+         </dependency>
+ 
+-    </dependencies>
++        <!--网关签权客户端-->
++        <dependency>
++            <groupId>com.th</groupId>
++            <artifactId>authentication-client</artifactId>
++            <version>1.0-SNAPSHOT</version>
++        </dependency>
+ 
+-    <dependencyManagement>
+-        <dependencies>
+-            <dependency>
+-                <groupId>org.springframework.cloud</groupId>
+-                <artifactId>spring-cloud-dependencies</artifactId>
+-                <version>${spring-cloud.version}</version>
+-                <type>pom</type>
+-                <scope>import</scope>
+-            </dependency>
+-        </dependencies>
+-    </dependencyManagement>
++        <!--使用 lombok 简化 Java 代码-->
++        <dependency>
++            <groupId>org.projectlombok</groupId>
++            <artifactId>lombok</artifactId>
++            <version>1.18.8</version>
++            <optional>true</optional>
++        </dependency>
++
++        <dependency>
++            <groupId>org.springframework.cloud</groupId>
++            <artifactId>spring-cloud-starter-config</artifactId>
++            <version>2.1.3.RELEASE</version>
++        </dependency>
++
++        <dependency>
++            <groupId>com.squareup.okhttp3</groupId>
++            <artifactId>okhttp</artifactId>
++            <version>4.1.0</version>
++        </dependency>
++
++    </dependencies>
++
++
+ 
+     <build>
+         <plugins>
+             <plugin>
+                 <groupId>org.springframework.boot</groupId>
+                 <artifactId>spring-boot-maven-plugin</artifactId>
++            </plugin>
++            <plugin>
++                <groupId>org.apache.maven.plugins</groupId>
++                <artifactId>maven-compiler-plugin</artifactId>
++                <configuration>
++                    <source>8</source>
++                    <target>8</target>
++                </configuration>
+             </plugin>
+         </plugins>
+     </build>
+Index: .idea/jarRepositories.xml
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/jarRepositories.xml	
+@@ -0,0 +1,25 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Central Repository" />
++      <option name="url" value="https://repo.maven.apache.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Central Repository" />
++      <option name="url" value="http://maven.aliyun.com/nexus/content/groups/public" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
+Index: springcloud-config/src/main/resources/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  port: 8002\r\nspring:\r\n  application:\r\n    name: springcloud-config\r\n  profiles:\r\n    active: native\r\n  cloud:\r\n    config:\r\n      server:\r\n        native:\r\n          search-locations: classpath:properties/\r\neureka:\r\n  client:\r\n    service-url:\r\n      defaultZone: http://localhost:8001/eureka/\r\n
+===================================================================
+diff --git a/springcloud-config/src/main/resources/application.yml b/springcloud-config/src/main/resources/application.yml
+--- a/springcloud-config/src/main/resources/application.yml	
++++ b/springcloud-config/src/main/resources/application.yml	
+@@ -10,6 +10,26 @@
+       server:
+         native:
+           search-locations: classpath:properties/
++  datasource:
++    url: jdbc:mysql://localhost:3306/basedata?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&serverTimezone=Asia/Shanghai
++    username: root
++    password: taohui1996
++    driver-class-name: com.mysql.cj.jdbc.Driver
++    type: com.alibaba.druid.pool.DruidDataSource
++    druid:
++      initial-size: 5
++      min-idle: 5
++      max-active: 10
++      max-wait: 60000
++      time-between-eviction-runs-millis: 60000
++      min-evictable-idle-time-millis: 300000
++      validation-query: SELECT 1
++      test-while-idle: true
++      test-on-borrow: false
++      test-on-return: false
++      pool-prepared-statements: true
++      max-pool-prepared-statement-per-connection-size: 20
++      filter: stat,wall,log4j
+ eureka:
+   client:
+     service-url:
+Index: springcloud-config/src/main/resources/properties/springcloud-gateway-default.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  port: 8003\r\nspring:\r\n  application:\r\n    name: springcloud-gateway\r\n  cloud:\r\n    gateway:\r\n      routes:\r\n        - id: customer\r\n          uri: lb://springcloud-web #eureka注册中心存在的服务名称\r\n          predicates:\r\n            - Path=/api/customer/** #路径配置\r\n          filters:\r\n            - StripPrefix=1     #忽略Path配置的个数，此处为1代表访问/api/customer/**时，会将api忽略，真实的访问地址为lb://customer-center/customer/**,如果为2，则为lb://customer-center/**
+===================================================================
+diff --git a/springcloud-config/src/main/resources/properties/springcloud-gateway-default.yml b/springcloud-config/src/main/resources/properties/springcloud-gateway-default.yml
+--- a/springcloud-config/src/main/resources/properties/springcloud-gateway-default.yml	
++++ b/springcloud-config/src/main/resources/properties/springcloud-gateway-default.yml	
+@@ -1,14 +1,67 @@
+ server:
+-  port: 8003
++  port: 8004
+ spring:
+   application:
+     name: springcloud-gateway
++  redis:
++    host: localhost
++    port: 6379
++  datasource:
++    url: jdbc:mysql://localhost:3306/basedata?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&serverTimezone=Asia/Shanghai
++    username: root
++    password: taohui1996
++    driver-class-name: com.mysql.cj.jdbc.Driver
++    type: com.alibaba.druid.pool.DruidDataSource
+   cloud:
+     gateway:
++      default-filters:
++        - name: Retry
++          args:
++            retries: 3
++            statuses: BAD_GATEWAY
++        - AddResponseHeader=X-Response-Default-Foo, Default-Bar
++        - name: RequestRateLimiter
++          args:
++            redis-rate-limiter.replenishRate: 10  #令牌桶的容积
++            redis-rate-limiter.burstCapacity: 1  #流速 每秒
++            rate-limiter: "#{@defaultRedisRateLimiter}"  #SPEL表达式去的对应的bean
++            key-resolver: "#{@apiKeyResolver}" #SPEL表达式去的对应的bean
+       routes:
+         - id: customer
+           uri: lb://springcloud-web #eureka注册中心存在的服务名称
+           predicates:
+             - Path=/api/customer/** #路径配置
+           filters:
+-            - StripPrefix=1     #忽略Path配置的个数，此处为1代表访问/api/customer/**时，会将api忽略，真实的访问地址为lb://customer-center/customer/**,如果为2，则为lb://customer-center/**
+\ No newline at end of file
++            - StripPrefix=1     #忽略Path配置的个数，此处为1代表访问/api/customer/**时，会将api忽略，真实的访问地址为lb://customer-center/customer/**,如果为2，则为lb://customer-center/**
++  security:
++    oauth2:
++      jwt:
++        signingKey: 123456
++
++gate:
++  ignore:
++    authentication:
++      startWith: /oauth,/open
++
++#feign:
++#  httpclient:
++#    enabled: false
++#  okhttp:
++#    enabled: false
++#  hystrix:
++#    enabled: false
++
++#hystrix:
++#  command:
++#    default:
++#      execution:
++#        isolation:
++#          thread:
++#            timeoutInMilliseconds: 3000
++#logging:
++#  level:
++#    com.springboot.cloud.gateway: debug
++#    com.jalja.org.spring: debug
++#  path: logs/
++#  file:
++#    max-size: 1GB
+\ No newline at end of file

@@ -1,0 +1,11 @@
+com\th\common\core\util\UserContextHolder$1.class
+com\th\common\core\util\UserContextHolder.class
+com\th\common\core\entity\po\BasePo.class
+com\th\common\core\entity\vo\Result.class
+com\th\common\core\exception\ErrorType.class
+com\th\common\core\entity\from\BaseForm.class
+com\th\common\core\util\UserContextHolder$SingletonHolder.class
+com\th\common\core\entity\from\BaseQueryForm.class
+com\th\common\core\entity\param\BaseParam.class
+com\th\common\core\exception\BaseException.class
+com\th\common\core\exception\ServiceException.class

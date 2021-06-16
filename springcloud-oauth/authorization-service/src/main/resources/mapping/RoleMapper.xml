@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.th.authorization.mapper.RoleMapper">
+    <resultMap id="BaseResultMap" type="com.th.authorization.model.Role">
+        <id column="t_id"  property="id" />
+        <result column="t_name"  property="name" />
+        <result column="t_description"  property="description" />
+        <result column="t_create_by"  property="createdBy" />
+        <result column="t_create_time"  property="createdTime" />
+        <result column="t_update_time"  property="updatedTime" />
+        <result column="t_update_by"  property="updatedBy" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        t_id,t_name,t_description,t_create_by,t_create_time,t_update_time,t_update_by
+    </sql>
+
+    <select id="queryByUserId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+            r.t_id,
+            r.t_name,
+            r.t_description,
+            r.t_create_by,
+            r.t_create_time,
+            r.t_update_time,
+            r.t_update_by
+        from t_bd_user_role ur
+        left join t_bd_role r on r.t_id=ur.t_role_id
+        where ur.t_user_id=#{userId}
+    </select>
+</mapper>

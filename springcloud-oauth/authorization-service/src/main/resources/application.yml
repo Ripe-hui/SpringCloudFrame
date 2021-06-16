@@ -1,0 +1,42 @@
+server:
+  port: 8003
+
+spring:
+  application:
+    name: authorization-server
+  redis:
+    host: localhost
+    port: 6379
+    ##password: ${REDIS_PASSWORD:}
+  datasource:
+    url: jdbc:mysql://localhost:3306/basedata?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: taohui1996
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 10
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      filter: stat,wall,log4j
+  security:
+    oauth2:
+      jwt:
+        signingKey: 123456
+
+mybatis:
+  mapper-locations: classpath*:mapping/**/*.xml
+  type-aliases-package: com.th.**.model
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
